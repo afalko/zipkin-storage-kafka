@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2015-2018 The OpenZipkin Authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -26,9 +26,9 @@ import zipkin2.storage.kafka.KafkaStorage;
  * This is autoconfiguration for ZipkinKafka storage.
  */
 @Configuration
-/*@EnableConfigurationProperties(ZipkinKafkaStorageProperties.class)
+@EnableConfigurationProperties(ZipkinKafkaStorageProperties.class)
 @ConditionalOnProperty(name = "zipkin.storage.type", havingValue = "kafka")
-@ConditionalOnMissingBean(StorageComponent.class)*/
+@ConditionalOnMissingBean(StorageComponent.class)
 class ZipkinKafkaStorageAutoConfiguration {
 
   @Bean
