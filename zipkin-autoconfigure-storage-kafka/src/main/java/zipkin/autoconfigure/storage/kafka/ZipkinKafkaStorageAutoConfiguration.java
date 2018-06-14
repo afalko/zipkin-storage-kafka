@@ -33,12 +33,8 @@ class ZipkinKafkaStorageAutoConfiguration {
 
   @Bean
   @ConditionalOnMissingBean
-  V2StorageComponent storage(ZipkinKafkaStorageProperties properties) {
+  StorageComponent storage(ZipkinKafkaStorageProperties properties) {
     KafkaStorage result = properties.toBuilder().build();
-    return V2StorageComponent.create(result);
-  }
-
-  @Bean KafkaStorage v2Storage(V2StorageComponent component) {
-    return (KafkaStorage) component.delegate();
+    return result;
   }
 }
