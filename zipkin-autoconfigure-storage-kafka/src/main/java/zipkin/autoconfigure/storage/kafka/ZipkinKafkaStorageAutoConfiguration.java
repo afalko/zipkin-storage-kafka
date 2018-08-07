@@ -18,9 +18,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import zipkin.internal.V2StorageComponent;
 import zipkin2.storage.StorageComponent;
-import zipkin2.storage.kafka.KafkaStorage;
 
 /**
  * This is autoconfiguration for ZipkinKafka storage.
@@ -34,7 +32,6 @@ class ZipkinKafkaStorageAutoConfiguration {
   @Bean
   @ConditionalOnMissingBean
   StorageComponent storage(ZipkinKafkaStorageProperties properties) {
-    KafkaStorage result = properties.toBuilder().build();
-    return result;
+    return properties.toBuilder().build();
   }
 }
